@@ -150,22 +150,6 @@ export default function EditProfile() {
           onChange={handleChange('password')}
           margin="normal"
         />
-        <Typography variant="subtitle1" className={classes.subheading}>
-          Registered Account
-        </Typography>
-        <FormControlLabel
-          control={
-            <Switch
-              classes={{
-                checked: classes.checked,
-                bar: classes.bar,
-              }}
-              checked={values.registered}
-              onChange={handleCheck}
-            />
-          }
-          label={values.registered ? 'Active' : 'Inactive'}
-        />
         <br />
         {values.error && (
           <Typography component="p" color="error">

@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '@material-ui/icons/Home'
 import Button from '@material-ui/core/Button'
 import auth from '../lib/auth-helper'
+import WeDevlogo from '../assets/images/Wedevlogo.png';
 
 
 
@@ -29,7 +30,7 @@ export default function Menu(){
   return (
     <AppBar position="static" style={{ background: '#000000' }}>
     <Toolbar style={{ justifyContent: 'space-between' }}>
-    <img src="../assets/images/WeDev_Logo.png" alt="WeDev" style={{ height: '70px', width: '120px' }}/>
+    <img src= {WeDevlogo} alt="WeDev" style={{ height: '70px', width: '120px' }}/>
       <div>
         <Link to="/">
           <IconButton aria-label="Home" style={isActive(location, "/")}>
@@ -54,7 +55,6 @@ export default function Menu(){
         }
         {
           auth.isAuthenticated() && (<span>
-            {auth.isAuthenticated().user && auth.isAuthenticated().user.seller && (<Link to="/seller/shops"><Button style={isPartActive(location, "/seller/")}>My Shops</Button></Link>)}
             <Link to={"/user/" + auth.isAuthenticated().user._id}>
               <Button style={isActive(location, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
             </Link>
